@@ -52,14 +52,14 @@
         raise_layer {
 // ------------------------------------------------------------------------------------------------------------
 // |BTCLR| BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
-// |     |      |      |BRI UP |BRI DN |      |                | PGUP |      |   ^   |      |       |       |
+// |TogOut|     |      |BRI UP |BRI DN |      |                | PGUP |      |   ^   |      |       |       |
 // |     |      | PREV | PLAY  |  NEXT |      |                | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
 // |     |      |      |       |       |      |      |  |      |      |      |       |      |       |       |
 //              |      |       |       |      |      |  |      |      |      |       |      |
             bindings = <
 &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4             &trans    &trans    &trans   &trans    &trans  &kp C_PWR
-&trans     &trans       &trans       &kp C_BRI_DN &kp C_BRI_UP &trans                   &kp PG_UP &trans    &kp UP   &trans    &kp N0  &trans
-&trans     &trans       &kp C_PREV   &kp C_PP     &kp C_NEXT   &trans                   &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp DEL &kp BSPC
+&out OUT_TOG &trans     &trans       &kp C_BRI_DN &kp C_BRI_UP &trans                   &kp PG_UP &trans    &kp UP   &trans    &kp N0  &trans
+&ext_power EP_TOG &trans &kp C_PREV   &kp C_PP     &kp C_NEXT   &trans                   &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp DEL &kp BSPC
 &trans     &trans       &trans       &trans       &trans       &trans  &trans   &trans  &trans    &trans    &trans   &trans    &trans  &trans
                         &trans       &trans       &trans       &trans  &trans   &tog 3  &trans    &trans    &trans   &trans
             >;
